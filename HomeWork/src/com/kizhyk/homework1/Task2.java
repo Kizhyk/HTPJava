@@ -1,4 +1,4 @@
-package com.kizhyk;
+package com.kizhyk.homework1;
 
 public class Task2 {
 
