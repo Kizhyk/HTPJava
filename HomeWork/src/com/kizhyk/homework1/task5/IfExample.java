@@ -1,4 +1,4 @@
-package com.kizhyk.task5;
+package com.kizhyk.homework1.task5;
 
 import java.io.BufferedReader;
 import java.io.IOException;
