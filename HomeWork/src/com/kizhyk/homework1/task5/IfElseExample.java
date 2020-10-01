@@ -10,9 +10,9 @@ public class IfElseExample {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String name = reader.readLine();
 
-        if (name.equals("Вася")) {
+        if ("Вася".equals(name)) {
             System.out.print("Привет!\nЯ так долго тебя ждал!");
-        } else if (name.equals("Анастасия")) {
+        } else if ("Анастасия".equals(name)) {
             System.out.print("Я тебя так долго ждал!");
         } else {
             System.out.print("Добрый день, а вы кто?");
