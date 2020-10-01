@@ -10,15 +10,15 @@ public class IfExample {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String name = reader.readLine();
 
-        if (name.equals("Вася")) {
+        if ("Вася".equals(name)) {
             System.out.print("Привет!\nЯ так долго тебя ждал!");
         }
 
-        if (name.equals("Анастасия")) {
+        if ("Анастасия".equals(name)) {
             System.out.print("Я тебя так долго ждал!");
         }
 
-        if (!name.equals("Вася") && !name.equals("Анастасия")) {
+        if (!"Вася".equals(name) && !"Анастасия".equals(name)) {
             System.out.print("Добрый день, а вы кто?");
         }
 
