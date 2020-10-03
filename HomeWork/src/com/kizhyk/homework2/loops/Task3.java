@@ -20,8 +20,6 @@ public class Task3 {
     private static double elevate(double base, int power) {
         if (power < 0) {
             throw new IllegalArgumentException();
-        } else if (power == 0) {
-            return 1;
         }
 
         double result = 1;
