@@ -15,6 +15,8 @@ public class Task3 {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        sc.close();
     }
 
     private static double elevate(double base, int power) {
