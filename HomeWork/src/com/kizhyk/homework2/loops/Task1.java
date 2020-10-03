@@ -8,12 +8,12 @@ public class Task1 {
         try {
             int count = Integer.parseInt(args[0]);
 
-            for (int i = 1; i <= count; i++) {
+            for (int i = 1; i < count; i++) {
                 factorial *= i;
                 System.out.printf("%d * ", i);
             }
 
-            System.out.print("= " + factorial);
+            System.out.printf("%d = %d", count, factorial);
         } catch (ArrayIndexOutOfBoundsException arrayException) {
             System.out.println("Insert program arguments");
         } catch (NumberFormatException numberException) {
