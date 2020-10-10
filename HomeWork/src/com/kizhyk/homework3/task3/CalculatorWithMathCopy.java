@@ -27,6 +27,9 @@ public class CalculatorWithMathCopy {
     }
 
     public double pow(double a, int b) {
+        if (a < 0) {
+            throw new IllegalArgumentException();
+        }
         return Math.pow(a, b);
     }
 }

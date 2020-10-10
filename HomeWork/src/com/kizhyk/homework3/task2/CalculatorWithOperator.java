@@ -27,6 +27,10 @@ public class CalculatorWithOperator {
     }
 
     public double pow(double a, int b) {
+        if (a < 0) {
+            throw new IllegalArgumentException();
+        }
+
         for (int i = 0; i < abs(b) - 1; i++) {
             a *= a;
         }
