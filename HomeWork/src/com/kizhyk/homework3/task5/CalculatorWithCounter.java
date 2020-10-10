@@ -3,8 +3,9 @@ package com.kizhyk.homework3.task5;
 import com.kizhyk.homework3.task2.CalculatorWithOperator;
 import com.kizhyk.homework3.task3.CalculatorWithMathCopy;
 import com.kizhyk.homework3.task4.CalculatorWithMathExtends;
+import com.kizhyk.homework3.task6.ICalculator;
 
-public class CalculatorWithCounter {
+public class CalculatorWithCounter implements ICalculator {
     private final CalculatorWithOperator operatorCalc;
     private final CalculatorWithMathCopy copyCalc;
     private final CalculatorWithMathExtends extendsCalc;

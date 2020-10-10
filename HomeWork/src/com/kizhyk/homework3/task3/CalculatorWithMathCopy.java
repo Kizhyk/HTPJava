@@ -1,6 +1,8 @@
 package com.kizhyk.homework3.task3;
 
-public class CalculatorWithMathCopy {
+import com.kizhyk.homework3.task6.ICalculator;
+
+public class CalculatorWithMathCopy implements ICalculator {
 
     public double sum(double a, double b) {
         return a + b;
