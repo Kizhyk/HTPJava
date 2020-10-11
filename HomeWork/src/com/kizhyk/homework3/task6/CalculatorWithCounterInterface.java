@@ -47,4 +47,8 @@ public class CalculatorWithCounterInterface implements ICalculator {
     public long getCountOperation() {
         return count;
     }
+
+    public ICalculator getCalculator() {
+        return calc;
+    }
 }

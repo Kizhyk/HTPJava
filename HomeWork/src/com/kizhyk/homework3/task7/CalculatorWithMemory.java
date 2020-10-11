@@ -55,4 +55,8 @@ public class CalculatorWithMemory implements ICalculator {
     public void writeMemory() {
         memory = lastOperationResult;
     }
+
+    public ICalculator getCalculator() {
+        return calc;
+    }
 }
