@@ -1,7 +1,5 @@
 package com.kizhyk.homework1;
 
-import java.util.Arrays;
-
 public class Task6 {
 
     public static void main(String[] args) {
@@ -11,12 +9,10 @@ public class Task6 {
         System.out.println(number);
     }
 
-    private static String createPhoneNumber(int[] array) {
-        StringBuilder s = new StringBuilder();
-
-        Arrays.stream(array).forEach(s::append);
-
-        return String.format("(%s) %s-%s", s.substring(0, 3), s.substring(3, 6), s.substring(6));
+    private static String createPhoneNumber(int[] array) {                //ну ладно
+        return String.format("(%d%d%d) %d%d%d-%d%d%d%d",                  //могу втупую
+                    array[0], array[1], array[2], array[3], array[4],
+                        array[5], array[6], array[7], array[8], array[9]);
     }
 
 }
