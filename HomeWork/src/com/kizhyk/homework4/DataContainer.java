@@ -35,4 +35,8 @@ public class DataContainer<T> {
         grow();
         return add(item);
     }
+
+    public T get(int index) {
+        return (index >= data.length || index < 0) ? null : data[index];
+    }
 }
