@@ -39,4 +39,8 @@ public class DataContainer<T> {
     public T get(int index) {
         return (index >= data.length || index < 0) ? null : data[index];
     }
+
+    public T[] getItems() {
+        return data;
+    }
 }
