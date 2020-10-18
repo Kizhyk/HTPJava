@@ -47,4 +47,18 @@ public class DataContainer<T> {
     public int size() {
         return data.length;
     }
+
+    public boolean delete(int index) {
+        if (index >= data.length || index < 0) {
+            return false;
+        }
+
+        for (int i = index; i < data.length - 1; i++) {
+            data[i] = data[i + 1];
+        }
+
+        data = Arrays.copyOf(data, data.length - 1);
+
+        return true;
+    }
 }
