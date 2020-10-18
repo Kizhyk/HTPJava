@@ -75,4 +75,23 @@ public class DataContainer<T> {
 
         return false;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        boolean needDelimiter = false;
+
+        for (T element : data) {
+            if (element != null) {
+                if (needDelimiter) {
+                    str.append(", ");
+                } else {
+                    needDelimiter = true;
+                }
+                str.append(element.toString());
+            }
+        }
+
+        return str.toString().trim();
+    }
 }
