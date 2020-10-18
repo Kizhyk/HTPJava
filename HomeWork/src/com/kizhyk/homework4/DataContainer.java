@@ -19,4 +19,20 @@ public class DataContainer<T> {
     private void grow() {
         data = Arrays.copyOf(data, data.length + GROW_SIZE);
     }
+
+    public int add(T item) {
+        if (item == null) {
+            return -1;
+        }
+
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] == null) {
+                data[i] = item;
+                return i;
+            }
+        }
+
+        grow();
+        return add(item);
+    }
 }
