@@ -2,6 +2,7 @@ package com.kizhyk.homework4;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class DataContainer<T> {
     private static final int DEFAULT_SIZE = 0;
@@ -93,5 +94,95 @@ public class DataContainer<T> {
         }
 
         return str.toString().trim();
+    }
+
+    public void sort(Comparator<T> comparator) {
+        boolean isSorted = false;
+        int count = data.length - 1;
+
+        while (!isSorted) {
+            isSorted = true;
+
+            for (int i = 0; i < count; i++) {
+                if (comparator.compare(data[i], data[i + 1]) > 0) {
+                    isSorted = false;
+                    T tmp = data[i];
+                    data[i] = data[i + 1];
+                    data[i + 1] = tmp;
+                }
+            }
+
+            for (int i = count - 1; i > 0; i--) {
+                if (comparator.compare(data[i], data[i + 1]) < 0) {
+                    isSorted = false;
+                    T tmp = data[i];
+                    data[i] = data[i - 1];
+                    data[i - 1] = tmp;
+                }
+            }
+
+            count--;
+        }
+    }
+
+    public static <T extends Comparable<T>> void sort(DataContainer<T> container) {
+        boolean isSorted = false;
+        T[] data = container.getItems();
+
+        int count = data.length - 1;
+
+        while (!isSorted) {
+            isSorted = true;
+
+            for (int i = 0; i < count; i++) {
+                if (data[i].compareTo(data[i + 1]) > 0) {
+                    isSorted = false;
+                    T tmp = data[i];
+                    data[i] = data[i + 1];
+                    data[i + 1] = tmp;
+                }
+            }
+
+            for (int i = count - 1; i > 0; i--) {
+                if (data[i].compareTo(data[i + 1]) < 0) {
+                    isSorted = false;
+                    T tmp = data[i];
+                    data[i] = data[i - 1];
+                    data[i - 1] = tmp;
+                }
+            }
+
+            count--;
+        }
+    }
+
+    public static <T> void sort(DataContainer<T> container, Comparator<T> comparator) {
+        boolean isSorted = false;
+        T[] data = container.getItems();
+        int count = data.length - 1;
+
+        while (!isSorted) {
+            isSorted = true;
+
+            for (int i = 0; i < count; i++) {
+                if (comparator.compare(data[i], data[i + 1]) > 0) {
+                    isSorted = false;
+                    T tmp = data[i];
+                    data[i] = data[i + 1];
+                    data[i + 1] = tmp;
+                }
+            }
+
+            for (int i = count - 1; i > 0; i--) {
+                if (comparator.compare(data[i], data[i + 1]) < 0) {
+                    isSorted = false;
+                    T tmp = data[i];
+                    data[i] = data[i - 1];
+                    data[i - 1] = tmp;
+                }
+            }
+
+            count--;
+        }
     }
 }
