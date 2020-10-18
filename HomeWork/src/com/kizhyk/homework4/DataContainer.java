@@ -43,4 +43,8 @@ public class DataContainer<T> {
     public T[] getItems() {
         return data;
     }
+
+    public int size() {
+        return data.length;
+    }
 }
