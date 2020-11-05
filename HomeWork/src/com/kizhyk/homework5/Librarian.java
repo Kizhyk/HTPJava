@@ -32,7 +32,7 @@ public class Librarian {
     }
 
     public static String cleanText(String text) {
-        StringBuilder bl = new StringBuilder(text);
+        /*StringBuilder bl = new StringBuilder(text);
 
         char[] trash = {'!', '\"', ':', ',', '.', '(', ')', '\'', ';', '?', '\n'};
 
@@ -41,10 +41,16 @@ public class Librarian {
             while ((i = text.indexOf(c, i)) != -1) {
                 bl.replace(i++, i, " ");
             }
+        }*/
+
+        char[] trash = {'!', '\"', ':', ',', '.', '(', ')', '\'', ';', '?', '\n'};
+
+        for (char c : trash) {
+            text = text.replace(c, ' ');
         }
 
         //return text.replaceAll("[!\":,.()';?\n]", " ");
 
-        return bl.toString();
+        return text;
     }
 }
