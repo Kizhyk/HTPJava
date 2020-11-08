@@ -7,7 +7,7 @@ public class Librarian {
         return new HashSet<>(splitIntoWords(text));
     }
 
-    public static void printTop(String text, int amount) {
+    public static void printTop(String text, int amount) { //мне очень не хотелось возвращать ArrayList<HashMap<String, Integer>>
         HashMap<String, Integer> map = new HashMap<>();
 
         for (String s : splitIntoWords(text)) {
