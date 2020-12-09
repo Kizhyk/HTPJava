@@ -11,7 +11,7 @@ public abstract class BankLoader extends SiteLoader {
         EUR("292"),
         RUB("298");
 
-        private String id;
+        private final String id;
 
         Currency(String id) {
             this.id = id;
@@ -45,7 +45,7 @@ public abstract class BankLoader extends SiteLoader {
     protected abstract double handle(String content, Currency currencyName);
 
     protected void write(Currency currency, String path, double rate, Date date, boolean isNew) {
-        if (isNew) {
+        if (!isNew) {
             write(currency, path, rate, date);
         } else {
             //TODO
@@ -102,7 +102,8 @@ public abstract class BankLoader extends SiteLoader {
         } while (error && retryCount <= 5);
 
         if (error) {
-            throw new RuntimeException("Превышено количество попыток записи.");
+            System.err.println("Превышено количество попыток записи.");
+            System.exit(42);
         }
 
         return new Pair(path, isNew);

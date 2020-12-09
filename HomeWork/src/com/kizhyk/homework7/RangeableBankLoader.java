@@ -27,6 +27,10 @@ public abstract class RangeableBankLoader extends BankLoader {
     }
 
     private void write(Currency currency, String path, double[] rates, Date fromDate, Date tillDate, boolean isNew) {
-        //TODO
+        if (!isNew) {
+            write(currency, path, rates, fromDate, tillDate);
+        } else {
+            //TODO
+        }
     }
 }
